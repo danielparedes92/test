@@ -1,11 +1,6 @@
-name: "Lint PR"
-on:
-  pull_request_target:
-    types:
-      - opened
-      - edited
-      - synchronize
-
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
 jobs:
   main:
     name: Validate PR title
