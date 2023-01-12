@@ -4,6 +4,7 @@ on:
   pull_request:
     types:
       - opened
+      - push
 jobs:
   main:
     name: Validate PR title
