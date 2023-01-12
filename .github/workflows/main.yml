@@ -1,4 +1,4 @@
-name: "Conventional Commits"
+name: "Conventional Commits2"
 on: [pull_request]
 jobs:
   main:
