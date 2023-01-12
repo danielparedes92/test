@@ -1,11 +1,19 @@
-name: Semantic-PR-title
-on: [push]
+name: "Lint PR"
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
+
 jobs:
-  Explore-GitHub-Actions:
+  main:
+    name: Validate PR title
     runs-on: ubuntu-latest
     steps:
-      - name: semantic-pull-request-tilte
-        uses: amannn/action-semantic-pull-request@v5.0.2
+      - uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           types: |
             fix
