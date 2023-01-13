@@ -9,14 +9,12 @@ jobs:
         id: lint_pr_title
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          header: pr-title-lint-error
-          # Configure which types are allowed (newline delimited).
-          # Default: https://github.com/commitizen/conventional-commit-types
           types: |
             fix
             feat
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-title-lint-error
           message: |
             ```
             ${{ steps.lint_pr_title.outputs.error_message }}
